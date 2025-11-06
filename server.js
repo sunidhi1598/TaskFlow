@@ -11,15 +11,25 @@ connectDB();
 
 const app = express();
 
-// CORS Configuration for Production
-const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL 
-    : 'http://localhost:3000',
-  credentials: true,
-};
+// ✅ CORS Configuration for Local + Production
+const allowedOrigins = [
+  'http://localhost:5173', // Vite local
+  'http://localhost:3000', // CRA local
+  'https://taskflowmernproject.netlify.app' // your live site
+];
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error('CORS not allowed for this origin: ' + origin));
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
