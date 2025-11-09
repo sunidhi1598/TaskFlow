@@ -17,9 +17,10 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
+  // ✅ Updated: added /api prefix for backend route consistency
   const register = async (name, email, password) => {
     try {
-      const { data } = await api.post('/auth/register', {
+      const { data } = await api.post('/api/auth/register', {
         name,
         email,
         password,
@@ -28,6 +29,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data));
       setUser(data);
+
       return { success: true };
     } catch (error) {
       return {
@@ -37,9 +39,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // ✅ Updated: added /api prefix for backend route consistency
   const login = async (email, password) => {
     try {
-      const { data } = await api.post('/auth/login', {
+      const { data } = await api.post('/api/auth/login', {
         email,
         password,
       });
@@ -47,6 +50,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data));
       setUser(data);
+
       return { success: true };
     } catch (error) {
       return {
