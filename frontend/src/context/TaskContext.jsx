@@ -13,10 +13,10 @@ export const TaskProvider = ({ children }) => {
   // Fetch all tasks
   const fetchTasks = async () => {
     if (!user) return;
-    
+
     setLoading(true);
     try {
-      const endpoint = filter === 'all' ? '/tasks' : `/tasks?status=${filter}`;
+      const endpoint = filter === 'all' ? '/api/tasks' : `/api/tasks?status=${filter}`;
       const { data } = await api.get(endpoint);
       setTasks(data.data);
     } catch (error) {
@@ -29,7 +29,7 @@ export const TaskProvider = ({ children }) => {
   // Create new task
   const createTask = async (taskData) => {
     try {
-      const { data } = await api.post('/tasks', taskData);
+      const { data } = await api.post('/api/tasks', taskData);
       setTasks([data.data, ...tasks]);
       return { success: true };
     } catch (error) {
@@ -43,7 +43,7 @@ export const TaskProvider = ({ children }) => {
   // Update task
   const updateTask = async (id, taskData) => {
     try {
-      const { data } = await api.put(`/tasks/${id}`, taskData);
+      const { data } = await api.put(`/api/tasks/${id}`, taskData);
       setTasks(tasks.map((task) => (task._id === id ? data.data : task)));
       return { success: true };
     } catch (error) {
@@ -57,7 +57,7 @@ export const TaskProvider = ({ children }) => {
   // Delete task
   const deleteTask = async (id) => {
     try {
-      await api.delete(`/tasks/${id}`);
+      await api.delete(`/api/tasks/${id}`);
       setTasks(tasks.filter((task) => task._id !== id));
       return { success: true };
     } catch (error) {
@@ -71,7 +71,7 @@ export const TaskProvider = ({ children }) => {
   // Toggle task status
   const toggleTaskStatus = async (id) => {
     try {
-      const { data } = await api.patch(`/tasks/${id}/status`);
+      const { data } = await api.patch(`/api/tasks/${id}/status`);
       setTasks(tasks.map((task) => (task._id === id ? data.data : task)));
       return { success: true };
     } catch (error) {
