@@ -4,7 +4,7 @@ A full-stack MERN application for managing tasks with user authentication.
 
 ## 🚀 Live Demo
 
-- **Frontend:** https://taskflowmernproject1.netlify.app/
+- **Frontend:** https://taskflowmernproject.netlify.app/
 - **Backend API:** https://taskflow-czdi.onrender.com/
 - **GitHub:** https://github.com/sunidhi1598/TaskFlow
 
@@ -104,3 +104,4 @@ MIT License - feel free to use this project for learning!
 
 
 Built with ❤️ using MERN Stack
+
