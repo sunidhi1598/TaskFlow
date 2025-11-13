@@ -2,13 +2,13 @@
 
 A full-stack MERN application for managing tasks with user authentication.
 
-## 🚀 Live Demo
+## Live Demo
 
 - **Frontend:** https://taskflowmernproject.netlify.app/
 - **Backend API:** https://taskflow-czdi.onrender.com/
 - **GitHub:** https://github.com/sunidhi1598/TaskFlow
 
-## ✨ Features
+## Features
 
 - User registration and login with JWT authentication
 - Create, edit, and delete tasks
@@ -16,7 +16,7 @@ A full-stack MERN application for managing tasks with user authentication.
 - Filter tasks by status (All, Completed, Pending)
 - Responsive design with Tailwind CSS
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:** React, Vite, Tailwind CSS, React Router, Axios  
 **Backend:** Node.js, Express, MongoDB, JWT, bcrypt  
@@ -42,7 +42,7 @@ cp .env.example .env
 npm run dev
 ```
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Auth
 - `POST /api/auth/register` - Register user
@@ -56,7 +56,7 @@ npm run dev
 - `DELETE /api/tasks/:id` - Delete task
 - `PATCH /api/tasks/:id/status` - Toggle status
 
-## 📁 Project Structure
+## Project Structure
 ```
 taskflow-mern/
 ├── backend/          # Express API server
@@ -75,7 +75,7 @@ taskflow-mern/
 └── README.md
 ```
 
-## 🔐 Environment Variables
+## Environment Variables
 
 **Backend (.env)**
 ```env
@@ -91,12 +91,12 @@ FRONTEND_URL=https://taskflowmernproject.netlify.app
 VITE_API_URL=https://taskflow-czdi.onrender.com/api
 ```
 
-## 👤 Author
+## Author
 
 **Sunidhi**  
 GitHub: [@sunidhi1598](https://github.com/sunidhi1598)
 
-## 📄 License
+## License
 
 MIT License - feel free to use this project for learning!
 
@@ -104,4 +104,5 @@ MIT License - feel free to use this project for learning!
 
 
 Built with ❤️ using MERN Stack
+
 
