@@ -22,7 +22,7 @@ A full-stack MERN application for managing tasks with user authentication.
 **Backend:** Node.js, Express, MongoDB, JWT, bcrypt  
 **Deployment:** Netlify (Frontend), Render (Backend)
 
-## 📦 Installation
+## Installation
 
 ### Backend Setup
 ```bash
@@ -104,6 +104,7 @@ MIT License - feel free to use this project for learning!
 
 
 Built with using MERN Stack
+
 
 
 
