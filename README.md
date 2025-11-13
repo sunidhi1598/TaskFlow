@@ -103,6 +103,7 @@ MIT License - feel free to use this project for learning!
 ---
 
 
-Built with ❤️ using MERN Stack
+Built with using MERN Stack
+
 
 
